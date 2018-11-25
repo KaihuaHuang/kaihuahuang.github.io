@@ -4,7 +4,7 @@ title:      Regression Review
 subtitle:   From basic to lasso regression
 date:       2018-11-25
 author:     William
-header-img: img/post-bg-regression.png
+header-img: img/post-bg-regression.jpg
 catalog: true
 tags:
     - regression
