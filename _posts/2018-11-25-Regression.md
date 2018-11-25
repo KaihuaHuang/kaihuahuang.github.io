@@ -72,6 +72,7 @@ y_n
 \end{matrix} 
 \right]
 $$
+
 In short hand, $X*w = y$. If $X$ is invertible then $w = X^{-1}y $
 
 
