@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Regression Summary
+title:      Regression Review
 subtitle:   From basic to lasso regression
 date:       2018-11-25
 author:     William
