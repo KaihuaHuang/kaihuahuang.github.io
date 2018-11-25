@@ -55,8 +55,7 @@ $$
 : & : & : & : & :\\
 1 & x_{n1} & x_{n2} &... & x_{nm}
 \end{matrix} 
-\right] $$
-$$* 
+\right] * 
 \left[\begin{matrix}
 w_0\\
 w_1\\
@@ -74,6 +73,16 @@ y_n
 $$
 
 In short hand, $X*w = y$. If $X$ is invertible then $w = X^{-1}y $
+
+$$
+X = \left[\begin{matrix}
+1 & x_{11} & x_{12} &... & x_{1m}\\
+1 & x_{21} & x_{22} &... & x_{2m}\\
+: & : & : & : & :\\
+1 & x_{n1} & x_{n2} &... & x_{nm}
+\end{matrix} 
+\right]
+$$
 
 
 ## References
