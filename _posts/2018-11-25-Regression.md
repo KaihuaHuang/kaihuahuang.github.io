@@ -21,6 +21,7 @@ tags:
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+test1
 # Regression
 ## Basic Linear Regression
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
@@ -62,7 +63,7 @@ w_1\\
 w_m
 \end{matrix} 
 \right]
-=\left[\begin{matrix}
+= \left[\begin{matrix}
 y_1\\
 y_2\\
 ...\\
