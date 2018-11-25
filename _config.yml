@@ -110,3 +110,5 @@ friends: [
         href: "https://www.wsj.com/"
     }
 ]
+
+markdown: kramdown
