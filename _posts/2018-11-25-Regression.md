@@ -34,7 +34,8 @@ y_n
 \end{matrix} 
 \right]
 $$
-<center>![](http://ww1.sinaimg.cn/large/83d6b255ly1fxl19bhfw6j209903p0so.jpg)</center>
+
+![](http://ww1.sinaimg.cn/large/83d6b255ly1fxl19bhfw6j209903p0so.jpg)
 
 [//]: # ($$
 X = \left[\begin{matrix}
