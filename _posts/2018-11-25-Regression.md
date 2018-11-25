@@ -55,7 +55,8 @@ $$
 : & : & : & : & :\\
 1 & x_{n1} & x_{n2} &... & x_{nm}
 \end{matrix} 
-\right] * 
+\right] $$
+$$* 
 \left[\begin{matrix}
 w_0\\
 w_1\\
