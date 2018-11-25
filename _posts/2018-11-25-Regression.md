@@ -16,7 +16,7 @@ tags:
 test2
 # Regression 
 ## Basic Linear Regression
-Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
+Suppose $$y$$ is terget value vector, $$X$$ is input matrix. X has n samples and each sample has m features with 1 intercept.
 
 $$
 y = \left[\begin{matrix}
