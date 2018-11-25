@@ -13,7 +13,7 @@ tags:
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: { 
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ]
       processEscapes: true
     }
   });
@@ -21,7 +21,7 @@ tags:
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-test4
+test5
 # Regression 
 ## Basic Linear Regression
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
@@ -38,7 +38,7 @@ $$
 
 $$
 X = \left[\begin{matrix}
-1 & x_{11} & x_{12} &... & x_{1m}\\\\
+1 & x\_{11} & x\_{12} &... & x\_{1m}\\
 1 & x_{21} & x_{22} &... & x_{2m}\\\\
 : & : & : & : & :\\\\
 1 & x_{n1} & x_{n2} &... & x_{nm}
