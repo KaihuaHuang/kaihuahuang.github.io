@@ -10,8 +10,10 @@ tags:
     - regression
     - math
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-test1
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+test2
 # Regression 
 ## Basic Linear Regression
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
@@ -61,8 +63,9 @@ y_n
 \right]
 $$
 In short hand, $X*w = y$. If $X$ is invertible then $w = X^{-1}y $
-
+test
 $$x+y$$
+
 ## References
 [标准与局部加权线性回归](https://zhuanlan.zhihu.com/p/30422174)
 
