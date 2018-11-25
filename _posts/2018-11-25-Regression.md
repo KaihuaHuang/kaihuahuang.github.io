@@ -10,13 +10,21 @@ tags:
     - regression
     - math
 ---
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { 
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      processEscapes: true
+    }
+  });
+  </script>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 test2
 # Regression 
 ## Basic Linear Regression
-Suppose $$y$$ is terget value vector, $$X$$ is input matrix. X has n samples and each sample has m features with 1 intercept.
+Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
 
 $$
 y = \left[\begin{matrix}
