@@ -7,8 +7,8 @@ author:     William
 header-img: img/post-bg-regression.jpg
 catalog: true
 tags:
-    - regression
-    - math
+    - Regression
+    - Math
 ---
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
