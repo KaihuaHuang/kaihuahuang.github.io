@@ -68,6 +68,7 @@ gitalk:
   owner: kaihuahuang    #github用户名
   admin: kaihuahuang
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  language: en
 
 
 # 统计
