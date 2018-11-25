@@ -11,7 +11,7 @@ tags:
     - math
 ---
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-test
+test1
 # Regression 
 ## Basic Linear Regression
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
@@ -62,7 +62,7 @@ y_n
 $$
 In short hand, $X*w = y$. If $X$ is invertible then $w = X^{-1}y $
 
-
+$$x+y$$
 ## References
 [标准与局部加权线性回归](https://zhuanlan.zhihu.com/p/30422174)
 
