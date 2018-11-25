@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      Regression Summary
 subtitle:   From basic to lasso regression
@@ -21,7 +21,8 @@ tags:
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-# Regression
+test7
+# Regression 
 ## Basic Linear Regression
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
 
@@ -34,18 +35,16 @@ y_n
 \end{matrix} 
 \right]
 $$
-<center>![](http://ww1.sinaimg.cn/large/83d6b255ly1fxl19bhfw6j209903p0so.jpg)</center>
 
-[//]: # ($$
+$$
 X = \left[\begin{matrix}
-1 & x_{11} & x_{12} &... & x_{1m}\\
-1 & x_{21} & x_{22} &... & x_{2m}\\
-: & : & : & : & :\\
+1 & x\_{11} & x\_{12} &... & x\_{1m}\\
+1 & x_{21} & x_{22} &... & x_{2m}\\\\
+: & : & : & : & :\\\\
 1 & x_{n1} & x_{n2} &... & x_{nm}
 \end{matrix} 
 \right]
-$$)
-
+$$
 The first column of X is for intercept. The basic linear regression is to find a coefficients vector $w$ so that 
 
 $$
@@ -72,7 +71,8 @@ y_n
 \right]
 $$
 In short hand, $X*w = y$. If $X$ is invertible then $w = X^{-1}y $
-
+test
+$$x+y$$
 
 ## References
 [标准与局部加权线性回归](https://zhuanlan.zhihu.com/p/30422174)
