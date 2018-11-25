@@ -35,9 +35,7 @@ y_n
 \right]
 $$
 
-![](http://ww1.sinaimg.cn/large/83d6b255ly1fxl19bhfw6j209903p0so.jpg)
-
-[//]: # ($$
+$$
 X = \left[\begin{matrix}
 1 & x_{11} & x_{12} &... & x_{1m}\\
 1 & x_{21} & x_{22} &... & x_{2m}\\
@@ -45,7 +43,7 @@ X = \left[\begin{matrix}
 1 & x_{n1} & x_{n2} &... & x_{nm}
 \end{matrix} 
 \right]
-$$)
+$$
 
 The first column of X is for intercept. The basic linear regression is to find a coefficients vector $w$ so that 
 
