@@ -1,4 +1,4 @@
-﻿---
+---
 layout:     post
 title:      Regression Summary
 subtitle:   From basic to lasso regression
