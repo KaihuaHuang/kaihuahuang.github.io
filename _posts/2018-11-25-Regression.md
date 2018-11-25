@@ -76,7 +76,11 @@ In short hand, $X*w = y$. If $X$ is invertible then $w = X^{-1}y $
 
 ## References
 [标准与局部加权线性回归](https://zhuanlan.zhihu.com/p/30422174)
-
+[岭回归和LASSO](https://zhuanlan.zhihu.com/p/30535220)
+[脊回归（Ridge Regression）](https://blog.csdn.net/daunxx/article/details/51578787)
+[线性回归（Linear Regression）](https://blog.csdn.net/daunxx/article/details/51556677)
+[Lasso回归和岭（Ridge）回归](https://blog.csdn.net/qq_30981697/article/details/71438636)
+[简单易学的机器学习算法——岭回归(Ridge Regression)](https://blog.csdn.net/google19890102/article/details/27228279)
 
 
 
