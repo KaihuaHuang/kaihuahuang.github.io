@@ -11,7 +11,8 @@ tags:
     - math
 ---
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-# Regression
+test
+# Regression 
 ## Basic Linear Regression
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
 
