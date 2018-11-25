@@ -1,15 +1,3 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
 ---
 layout:     post
 title:      Regression Summary
@@ -22,7 +10,7 @@ tags:
     - regression
     - math
 ---
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # Regression
 ## Basic Linear Regression
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
