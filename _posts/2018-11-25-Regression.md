@@ -1,7 +1,7 @@
 ﻿---
 layout:     post
-title:      Regression Summary
-subtitle:   From basic to lasso regression
+title:      Basic Linear Regression 
+subtitle:   Explain OLS from probability and statistic
 date:       2018-11-25
 author:     William
 header-img: img/post-bg-regression.jpg
@@ -21,9 +21,9 @@ tags:
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-# Regression
-## Basic Linear Regression
-### Definition
+
+# Basic Linear Regression
+## Definition
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
 
 $$
@@ -75,7 +75,7 @@ $$
 
 In short hand, $X*w = y$. In most cases, there is no such $w$ satisfy the equation. Since $X$ is not square matrix then it's not invetible. We cannot simply calculate $w = X^{-1}y$.
 
-### Ordinary Least Squares
+## Ordinary Least Squares
 Since there is no exactly matched $w$, so we can only try our best to find optimal $w$. Intuitively,  the optimal $w$ should minimize the distance between the dots and line.
 
 ![](http://www.sthda.com/english/sthda-upload/images/machine-learning-essentials/linear-regression.png)
@@ -97,7 +97,7 @@ As a result:
 $$X^T(y-Xw)= 0\\X^Ty - X^TXw = 0\\
 X^TXw = X^Ty\\ w = (X^TX)^{-1}X^Ty$$
 
-### Digging into OLS
+## Digging into OLS - Probability
 **Why we use sum of square but not absolute value or third/ fourth power?** 
 
 Everything comes from maximum likelihood estimation!
@@ -106,33 +106,24 @@ There is implied assumption - **the residuals are normally distributed!**
 
 Denote $y_i$ is true value, $\hat{y}_i$ is estimated value.
 
-$$\epsilon_i = y_i - \hat{y}_i\\ \epsilon \sim N(\mu,\sigma^2)$$
+$$\epsilon_i = y_i - \hat{y}_i\\ \epsilon \sim N(0,\sigma^2)$$
 
-So the probability for $\epsilon_i$ is:
+Which means:
+$$y_i \sim N(x_iw,\sigma^2)$$
 
-$$p(\epsilon_i) = \frac{1}{\sqrt{2\pi}\sigma}*exp[-\frac{(\epsilon_i-u)^2}{2\sigma^2}]$$
+So the probability for y_i$ is:
+
+$$p(y_i) = \frac{1}{\sqrt{2\pi}\sigma}*exp[-\frac{(y_i - x_iw)^2}{2\sigma^2}]$$
 
 Then the likelihood function is:
 
-$$ L(\mu,\sigma) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi}\sigma}*exp[-\frac{(\epsilon_i-u)^2}{2\sigma^2}]$$
+$$ L(w) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi}\sigma}*exp[-\frac{(y_i - x_iw)^2}{2\sigma^2}]$$
 
 The log likelihood function would be:
 
-$$ L(\mu,\sigma) = - n\log\sigma - \frac{n}{2}log2\pi - \sum_{i=1}^n\frac{(\epsilon_i-u)^2}{2\sigma^2}\\=- \frac{n}{2}\log\sigma^2 - \frac{n}{2}log2\pi - \sum_{i=1}^n\frac{(\epsilon_i-u)^2}{2\sigma^2}$$
+$$ L(w) = - n\log\sigma - \frac{n}{2}log2\pi - \sum_{i=1}^n\frac{(y_i - x_iw)^2}{2\sigma^2}$$
 
-Take derivative on $\mu$ and $\sigma^2$:
-
-$$\frac{\partial L}{\partial \mu} = \frac{\sum(\epsilon_i-\mu)}{\sigma^2}=0$$
-
-$$\frac{\partial L}{\partial \sigma^2}=-\frac{n}{2\sigma^2} + \frac{\sum(\epsilon_i-\mu)^2}{2\sigma^4} \\\\= \frac{\sum(\epsilon_i-\mu)^2-n\sigma^2}{2\sigma^4} = 0$$
-
-Intermediate result:
-
-$$\mu = \frac{\sum \epsilon_i}{n} $$
-
-$$\sigma^2 = \frac{\sum(\epsilon_i-\mu)^2}{n}$$
-
-A good estimation should make $\mu$ and $\sigma^2$ close to zero.
+Since the first two items are fixed, so maximize the L(w) is equal to minimize $(y_i - x_iw)^2$. And it's same as OLS. In other words, OLS estimator also maximize likelihood function.
 
 
 
