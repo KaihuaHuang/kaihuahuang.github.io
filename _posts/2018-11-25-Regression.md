@@ -1,7 +1,7 @@
 ﻿---
 layout:     post
 title:      Basic Linear Regression 
-subtitle:   Explain OLS from probability and statistic
+subtitle:   Explain OLS from probability and econometrics
 date:       2018-11-25
 author:     William
 header-img: img/post-bg-regression.jpg
@@ -133,10 +133,18 @@ Below are assumptions MLR 1- 6
 >- Linear in Parameters
 >- Random Sampling
 >- No perfect Colinearity
->- Zero Conditional Mean ( $E(u|x_1,x_2..x_n) = 0$ )
->- Homoskedasticity ( $Var(\epsilon|x_1,x_2...x_n) = \sigma^2$ )
->- Normality of Error Term ( $\epsilon \sim N(0,\sigma^2)$ )
-  
+>- Zero Conditional Mean 
+>- Homoskedasticity 
+>- Normality of Error Term 
+
+Express MLR 4-6 in mathmatic language:
+
+$$E(u|x_1,x_2..x_n) = 0$$
+
+$$Var(\epsilon|x_1,x_2...x_n) = \sigma^2$$
+
+$$\epsilon \sim N(0,\sigma^2)$$
+
 Under MLR 1-4, the estimators are **unbiased**.
 
 $$E(\hat w_i) = w_i$$
