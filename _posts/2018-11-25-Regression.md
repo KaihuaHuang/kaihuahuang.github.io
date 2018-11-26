@@ -125,6 +125,37 @@ $$ L(w) = - n\log\sigma - \frac{n}{2}log2\pi - \sum_{i=1}^n\frac{(y_i - x_iw)^2}
 
 Since the first two items are fixed, so maximize the L(w) is equal to minimize $(y_i - x_iw)^2$. And it's same as OLS. In other words, OLS estimator also maximize likelihood function.
 
+## Digging into OLS - Econometrics
+In statistic, a good estimation should be BLUE (unbiased and smallest variance).
+
+Below are assumptions MLR 1- 6 
+
+>- Linear in Parameters
+>- Random Sampling
+>- No perfect Colinearity
+>- Zero Conditional Mean ( $E(u|x_1,x_2..x_n) = 0$ )
+>- Homoskedasticity ( $Var(\epsilon|x_1,x_2...x_n) = \sigma^2$ )
+>- Normality of Error Term ( $\epsilon \sim N(0,\sigma^2)$ )
+  
+Under MLR 1-4, the estimators are **unbiased**.
+
+$$E(\hat w_i) = w_i$$
+
+Under MLR 1-5, the estimators are **effectiveness**.
+
+<center>$Var(\hat w_i)$ is lowest comparing to other unbiased estimators</center>
+
+Also, under MLR 1-5, we can estimate the variance of coefficients ($Var(\hat w_i)$) and error term($\hat\sigma^2$).
+
+Under MRL 1-6, the estimators are normally distributed. Then we can do hypothesis test, p value or cofidence interval.
+
+$$\hat w_i \sim N(w_i,Var(\hat w_i))$$
+
+
+
+
+
+
 
 
 
