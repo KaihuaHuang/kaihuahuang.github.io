@@ -4,7 +4,7 @@ title:      Regression Summary
 subtitle:   From basic to lasso regression
 date:       2018-11-25
 author:     William
-header-img: post-bg-regression.jpg
+header-img: img\post-bg-regression.jpg
 catalog: true
 tags:
     - Regression
@@ -124,18 +124,27 @@ Take derivative on $\mu$ and $\sigma^2$:
 
 $$\frac{\partial L}{\partial \mu} = \frac{\sum(\epsilon_i-\mu)}{\sigma^2}=0$$
 
-$$\frac{\partial L}{\partial \sigma^2}=-\frac{n}{2\sigma^2} + \frac{\sum(\epsilon_i-\mu)^2}{2\sigma^4} = 0$$
+$$\frac{\partial L}{\partial \sigma^2}=-\frac{n}{2\sigma^2} + \frac{\sum(\epsilon_i-\mu)^2}{2\sigma^4} \\\\= \frac{\sum(\epsilon_i-\mu)^2-n\sigma^2}{2\sigma^4} = 0$$
+
+Intermediate result:
+
+$$\mu = \frac{\sum \epsilon_i}{n} $$
+
+$$\sigma^2 = \frac{\sum(\epsilon_i-\mu)^2}{n}$$
+
+A good estimation should make $\mu$ and $\sigma^2$ close to zero.
+
 
 
 
 ## References
-[标准与局部加权线性回归](https://zhuanlan.zhihu.com/p/30422174)
-[岭回归和LASSO](https://zhuanlan.zhihu.com/p/30535220)
-[脊回归（Ridge Regression）](https://blog.csdn.net/daunxx/article/details/51578787)
-[线性回归（Linear Regression）](https://blog.csdn.net/daunxx/article/details/51556677)
-[Lasso回归和岭（Ridge）回归](https://blog.csdn.net/qq_30981697/article/details/71438636)
-[简单易学的机器学习算法——岭回归(Ridge Regression)](https://blog.csdn.net/google19890102/article/details/27228279)
-[线性回归损失函数为什么要用平方形式](https://blog.csdn.net/saltriver/article/details/57544704)
+[标准与局部加权线性回归](https://zhuanlan.zhihu.com/p/30422174)  
+[岭回归和LASSO](https://zhuanlan.zhihu.com/p/30535220)  
+[脊回归（Ridge Regression）](https://blog.csdn.net/daunxx/article/details/51578787)  
+[线性回归（Linear Regression）](https://blog.csdn.net/daunxx/article/details/51556677)  
+[Lasso回归和岭（Ridge）回归](https://blog.csdn.net/qq_30981697/article/details/71438636)  
+[简单易学的机器学习算法——岭回归(Ridge Regression)](https://blog.csdn.net/google19890102/article/details/27228279)  
+[线性回归损失函数为什么要用平方形式](https://blog.csdn.net/saltriver/article/details/57544704)  
 
 
 
