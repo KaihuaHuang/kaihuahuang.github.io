@@ -1,6 +1,6 @@
 ﻿---
 layout:     post
-title:      Basic Linear Regression 
+title:      Basic Linear Regression - 1
 subtitle:   Explain OLS from probability and econometrics
 date:       2018-11-25
 author:     William
@@ -158,6 +158,8 @@ Also, under MLR 1-5, we can estimate the variance of coefficients ($Var(\hat w_i
 Under MRL 1-6, the estimators are normally distributed. Then we can do hypothesis test, p value or cofidence interval.
 
 $$\hat w_i \sim N(w_i,Var(\hat w_i))$$
+
+Because of center limit theory, we can lose our assumption when the sample size is large. Large sample + MLR 1-5 can also get above properties.
 
 
 
