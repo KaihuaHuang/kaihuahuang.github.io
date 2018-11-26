@@ -4,11 +4,11 @@ title:      Regression Summary
 subtitle:   From basic to lasso regression
 date:       2018-11-25
 author:     William
-header-img: img/post-bg-ios9-web.jpg
+header-img: post-bg-regression.jpg
 catalog: true
 tags:
-    - regression
-    - math
+    - Regression
+    - Math
 ---
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
