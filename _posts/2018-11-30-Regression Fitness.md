@@ -1,6 +1,6 @@
 ﻿---
 layout:     post
-title:      Basic Linear Regression - 2
+title:      Linear Regression - 2
 subtitle:   Evaluate the fittness of regression
 date:       2018-11-30
 author:     William
@@ -22,7 +22,7 @@ tags:
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-# Basic Linear Regression
+# Linear Regression
 ## $R^2$ - Evaluation from econometrics perspective
 SST - total sum of squares. It measures the total variation in the dependent variable.
 
@@ -55,6 +55,7 @@ The properties of $\epsilon$ comes from the derivative of OLS.
 As shown above, the higher SSE the bettwe the regression. So we define $R^2$ to measure the fitness.
 
 $$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$
+
 ## Adjusted $R^2$ - Improvement on $R^2$
 Actually, when we increase the explanatory variables in the regression, we can always get bettwer $R^2$. But is that good?
 
