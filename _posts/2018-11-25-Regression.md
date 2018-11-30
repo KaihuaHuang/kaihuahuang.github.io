@@ -1,6 +1,6 @@
 ﻿---
 layout:     post
-title:      Basic Linear Regression - 1
+title:      Linear Regression - 1
 subtitle:   Explain OLS from probability and econometrics
 date:       2018-11-25
 author:     William
@@ -22,7 +22,7 @@ tags:
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-# Basic Linear Regression
+# Linear Regression
 ## Definition
 Suppose $y$ is terget value vector, $X$ is input matrix. X has n samples and each sample has m features with 1 intercept.
 
