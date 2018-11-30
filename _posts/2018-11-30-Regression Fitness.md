@@ -55,6 +55,17 @@ The properties of $\epsilon$ comes from the derivative of OLS.
 As shown above, the higher SSE the bettwe the regression. So we define $R^2$ to measure the fitness.
 
 $$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$
+## Adjusted $R^2$ - Improvement on $R^2$
+Actually, when we increase the explanatory variables in the regression, we can always get bettwer $R^2$. But is that good?
+
+Adjusted $R^2$ adds a punishment for increasing explanatory variables.
+
+The adjusted $R^2$ formula (Suppose n is sample size, k is number of explanatory variables):
+
+$$R_{adj}^2 = 1- \frac{\frac{1}{n-k-1}SSR}{\frac{1}{n-1}SST}$$
+
+$R_{adj}^2$ is always smaller than $R^2$
+
 
 ## MSE - Bias Variance tradeoff
 
@@ -68,8 +79,8 @@ It can be decomposed into three components:
 
 $$ MSE = Var(\hat f(x)) + Bias(\hat f(x))^2 + Var(\epsilon)$$
 
-> Math
-> $$MSE = E[(y - \hat f(x))^2] = E[y^2] + E[\hat f(x)^2] - 2E[y \hat f(x)] \\
+
+> $$ MSE = E[(y - \hat f(x))^2] = E[y^2] + E[\hat f(x)^2] - 2E[y \hat f(x)] \\
   = Var(y) + E(y)^2 + Var(\hat f(x)) + E(\hat f(x))^2 - 2E[y \hat f(x)] \\
   = Var(y) + Var(\hat f(x)) + [f(x)^2 + E(\hat f(x))^2 - 2fE[ \hat f(x)]] \\
   = Var(y) + Var(\hat f(x)) + [f(x) - E(\hat f(x))]^2 \\
