@@ -54,7 +54,9 @@ The properties of $\epsilon$ comes from the derivative of OLS.
 
 As shown above, the higher SSE the bettwe the regression. So we define $R^2$ to measure the fitness.
 
-$$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$
+$$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$  
+
+$R^2$ is between 0 and 1.
 
 ## Adjusted $R^2$ - Improvement on $R^2$
 Actually, when we increase the explanatory variables in the regression, we can always get bettwer $R^2$. But is that good?
