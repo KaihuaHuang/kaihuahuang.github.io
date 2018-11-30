@@ -151,7 +151,7 @@ $$E(\hat w_i) = w_i$$
 
 Under MLR 1-5, the estimators are **effectiveness**.
 
-<center>$Var(\hat w_i)$ is lowest comparing to other unbiased estimators</center>
+<center>$Var(\hat w_i)$ is the estimator with **lowest variance** comparing to other unbiased estimators</center>
 
 Also, under MLR 1-5, we can estimate the variance of coefficients ($Var(\hat w_i)$) and error term($\hat\sigma^2$).
 
