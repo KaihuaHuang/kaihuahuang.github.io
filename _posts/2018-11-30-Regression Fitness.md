@@ -46,6 +46,7 @@ $$SST = SSE + SSR$$
 = SSE + SSR + 2\sum \epsilon_i \hat y_i - 2\bar y_i\sum \epsilon_i\\
 = SSE + SSR 
 $$
+
 > - $\sum \epsilon_i = 0$
 > - $cov(\epsilon_i,y_i) =0, E(\epsilon y) = 0$
 
@@ -57,7 +58,7 @@ $$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$
 
 ## MSE - Bias Variance tradeoff
 
-<center>![](http://ww1.sinaimg.cn/large/83d6b255ly1fxqgzqsgk7j20bk0b4jvc.jpg)</center>
+<center><img src = 'http://ww1.sinaimg.cn/large/83d6b255ly1fxqgzqsgk7j20bk0b4jvc.jpg'/></center>
 
 MSE define as:
 
