@@ -73,11 +73,11 @@ $$J(\theta) = -\frac{1}{m}\sum_{i=1}^m[y_i\log h_\theta(x_i)+(1-y_i)\log(1-h_\th
 
 **But why? - Maximum likelyhood Estimation!**
 
-As we discuss before, $h_\theta(x) = p(y=1|x)$. Suppose each dots are i.i.d.
+As we discuss before, $h_\theta(x) = p(y=1&#124;x)$. Suppose each dots are i.i.d.
 
 $$L(\theta) = \sum_{i=1}^m[p(y_i=1|x_i)^{y_i}p(y_i=0|x_i)^{1-y_i}]$$
 
-Take the log on likelihood function. Denote $p(y=1|x) = p(x)$.
+Take the log on likelihood function. Denote $p(y=1&#124;x) = p(x)$.
 
 $$\log L(\theta) = \sum [y_i\log p(x) + (1-y_i)(1-p)]$$
 
@@ -86,13 +86,16 @@ Since $p = h_\theta(x)$ and add a negative signal in front of equation we can de
 Once we get the cost funciton, we can minimize it and get optimal $\theta$. Because this is a convex function (free of local minimum), we can use gradient descent.
 
 $$h_\theta(x) = g(\theta^Tx) = \frac{1}{1+exp(-\theta^Tx)}$$
+
 <br/>
 $$\frac{\partial h_\theta(x)}{\partial \theta} = -\frac{1}{(1+exp(-\theta^Tx))^2} * -exp(-\theta^Tx)*x\\
 = \frac{exp(-\theta^Tx)+1-1}{(1+exp(-\theta^Tx))^2}*x\\
 = \frac{1}{1+exp(-\theta^Tx)} * (1-\frac{1}{1+exp(-\theta^Tx)}) * x\\
 = h_\theta(x)*(1-h_\theta(x))*x
 $$
+
 <br/>
+
 $$\frac{\partial J}{\partial \theta} = -\frac{1}{m}\sum[\frac{y_i}{h_\theta(x_i)} - \frac{1-y_i}{1-h_\theta(x_i)}]\frac{\partial h_\theta(x)}{\partial \theta} \\
 =-\frac{1}{m}\sum(y_i - h_\theta(x_i))*x_i
 $$
