@@ -88,6 +88,7 @@ Once we get the cost funciton, we can minimize it and get optimal $\theta$. Beca
 $$h_\theta(x) = g(\theta^Tx) = \frac{1}{1+exp(-\theta^Tx)}$$
 
 <br/>
+
 $$\frac{\partial h_\theta(x)}{\partial \theta} = -\frac{1}{(1+exp(-\theta^Tx))^2} * -exp(-\theta^Tx)*x\\
 = \frac{exp(-\theta^Tx)+1-1}{(1+exp(-\theta^Tx))^2}*x\\
 = \frac{1}{1+exp(-\theta^Tx)} * (1-\frac{1}{1+exp(-\theta^Tx)}) * x\\
