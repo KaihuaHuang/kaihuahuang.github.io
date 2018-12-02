@@ -39,7 +39,7 @@ Then the output will be in the range 0 and 1. And if the function ouput is large
 
 $$h_\theta(x) = g(\theta^Tx) = \frac{1}{1+exp(-\theta^Tx)}$$
 
-What's more, we will take the output as a probability $p(y=1|x,\theta)$. 
+What's more, we will take the output as a probability $p(y=1&#124;x,\theta)$. 
 
 **Why sigmoid function has such property? And will don't we choose other function that can map output to range 0 to 1?**
 
