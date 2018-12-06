@@ -1,7 +1,7 @@
 ﻿---
 layout:     post
-title:      Regression Summary
-subtitle:   From basic to lasso regression
+title:      Gradient Descent
+subtitle:   Convex Optimization Basic
 date:       2018-11-25
 author:     William
 header-img: img/post-bg-ios9-web.jpg
@@ -25,7 +25,7 @@ tags:
 ## Introduction
 
 Suppose $C(w)$ is the cost function and it's convex which means it's free of local minimum.
-<center><img width="250" height="188" class="center-image" alt="ConcaveConvexFunction" src="images/eps-gif/ConcaveConvexFunction_1000.gif"></center>
+<center><img width="250" height="188" src="images/ConcaveConvexFunction.gif"></center>
 
 
 
