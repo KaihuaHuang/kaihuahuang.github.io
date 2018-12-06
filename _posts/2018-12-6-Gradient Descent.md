@@ -25,7 +25,7 @@ tags:
 ## Introduction
 
 Suppose $C(w)$ is the cost function and it's convex which means it's free of local minimum.
-<center><img width="250" height="188" src="images/ConvexConcave.png"></center>
+<center><img width="250" height="188" src="img/ConvexConcave.png"></center>
 
 
 
