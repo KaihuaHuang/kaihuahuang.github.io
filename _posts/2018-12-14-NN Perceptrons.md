@@ -1,7 +1,7 @@
 ﻿---
 layout:     post
 title:      Neural Network - 1
-subtitle:   Principle Components Analysis in Market Risk
+subtitle:   Neuron and MLPs
 date:       2018-12-14
 author:     William
 header-img: img/post-bg-universe.jpg
@@ -46,15 +46,28 @@ $$ output=\left\{
 
 Using several perceptrons, we can build a simple neural network.
 
-<center><img src = 'http://neuralnetworksanddeeplearning.com/images/tikz0.png'></center>
+<center><img src = 'http://neuralnetworksanddeeplearning.com/images/tikz1.png'></center>
 
 ## Sigmoid Neuron
 
 For perceptrons neuron, there is a significan drawbacks. The output changes suddenly, so small changes in weights or bias won't change the output. It would be very difficult to calibrate weigts and bias. 
 
+
 <center><img src = 'http://ww1.sinaimg.cn/large/83d6b255ly1fy6zbvfyvdj20ba07c3yd.jpg'></center>
 
-To address this issue, 
+To address this issue, we can apply so called **activation function**. If we use sigmoid function as activation function, then the neuron is called sigmoid neuron. sigmoid function has expression below:
+
+$$\sigma(z) = \frac{1}{1+e^{-z}}$$
+
+$$z = \sum w_jx_j + b$$
+
+And its shape was like below:
+
+<center><img src = 'http://ww1.sinaimg.cn/large/83d6b255ly1fy70ehhy3oj20bn07l747.jpg'></center>
+
+After applying this activation function, any small changes in weights or bias will result in small change in output which is a good property we desired.
+
+If there is network which is made up by multiple layer of sigmold neurons, such network would be called multilayer perceptrons or **MLPs** despite it's not made up by perceptrons.
 
 
 
