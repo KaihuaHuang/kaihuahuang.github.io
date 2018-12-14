@@ -28,6 +28,8 @@ Perceptrons were developed in the 1950s and 1960s by Frank Rosenblatt which were
 
 <center><img src = 'http://neuralnetworksanddeeplearning.com/images/tikz0.png'></center>
 
+Suppose the perceptron has three inputs $x_1$, $x_2$ and $x_3$.
+
 ## References
 [Neural Networks and Deep Learning](neuralnetworksanddeeplearning.com/chap1.html
 )
