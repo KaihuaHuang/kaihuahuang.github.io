@@ -28,7 +28,7 @@ Backpropagation is about understanding how changing the weights and biases in a 
 
 All the mathmatic behind it is just chain rule. First, let's go through the notation.
 
-<center><img src = 'http://neuralnetworksanddeeplearning.com/images/tikz16.png'><\center>
+<center><img src = 'http://neuralnetworksanddeeplearning.com/images/tikz16.png'></center>
 
 > $w^l_{jk}$ denotes the weight for the connection from the $k^{th}$ neuron in $(l-1)^{th}$ layder to $j^{th}$ neuron in $l^{th}$ layer
 > $b^l_j$ denotes the bias of $j^{th}$ neuron in $l^{th}$ layer
