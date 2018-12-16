@@ -22,7 +22,7 @@ tags:
 </script>
 
 # Neural NetWork
-## Backpropagation
+## Backpropagation Proof
 
 Backpropagation is about understanding how changing the weights and biases in a network changes the cost function. Using backpropagation, our final target is calculate partial derivatives $\frac{\partial C}{\partial w}$ and $\frac{\partial C}{\partial b}$.
 
@@ -58,15 +58,77 @@ Then BP will relate intermediate result $\delta^l_j$ with our final target $\fra
 
 Next, let's prove backpropagation step by step.
 
+
+**Step.1 Forward propagation.**
+
+The input $x$ can be treated as $a^1$. Once we know $w$ and $b$, all the activation $a^2,a^3...a^L$ and intermediate result $z^2, z^3 ... z^L$ can be calculated using following equation:
+
+$$z^l = w^l*a^{l-1} + b^l$$
+
+$$a^l = \sigma(z^l)$$
+
+This is called Forward Propagation.
+
+**Step.2 Calculate error at last layer**
+
 $$\delta^L_j = \frac{\partial C}{\partial z^L_j} = \frac{\partial C}{\partial a^L}*\frac{\partial a^L}{\partial z^L_j} = \frac{\partial C}{\partial a^L_j}*\sigma'(z^L_j)$$
 
 >- L is the last layer (output layer)
 >- Cost function $C$ is a function of all the outputs $a^L$
 >- $\frac{\partial a^L_m}{\partial z^L_j} = 0 (m \neq j)$. So $\frac{\partial a^L}{\partial z^L_j} = \frac{\partial a^L_j}{\partial z^L_j}$.
+>- $a^L_j = \sigma(z^L_j)$
+
+Vectorized:
+
+$$\delta^L = \frac{\partial C}{\partial a^L} \odot \sigma'(z^L) = \bigtriangledown_aC \odot \sigma'(z^L)$$
+
+>- $\odot$ is element-wise product.
+>- $\bigtriangledown_aC$ denotes the gradient of function $C$ on $a$.
+
+**Step.3 Back propagation error**
+
+$$z^{l+1}_j = \sum_k w^{l+1}_{jk}*a^l_k + b^{l+1}_j = \sum_k w^{l+1}_{jk}*\sigma(z^l_k) + b^{l+1}_j$$
+
+$$\frac{\partial z^{l+1}_j}{\partial z^l_k} = w^{l+1}_{jk} * \sigma'(z^l_k)$$
+
+$$\delta^l_k = \frac{\partial C}{\partial z^l_k} = \sum_j\frac{\partial C}{\partial z^{l+1}_j} * \frac{\partial z^{l+1}_j}{\partial z^l_k} = \sum_j\delta^{l+1}_j*w^{l+1}_{jk} * \sigma'(z^l_k)$$
 
 
+Vectorized:
 
+$$z^{l+1} = w^{l+1}*\sigma(z^l) + b^{l+1}$$
 
+$$\delta^l = ((w^{l+1})^T\delta^{l+1})\odot\sigma'(z^l)$$
+
+Uisng above equation, we can calculate backforward for all the $\delta^2, \delta^3 ... \delta^L$.
+
+**Step.4 Calculate partial derivatives**
+
+$$\frac{\partial C}{\partial b^l_j} = \frac{\partial C}{\partial z^l_j}*\frac{\partial z^l_j}{\partial b^l_j} = \delta^l_j*1 = \delta^l_j$$
+
+$$\frac{\partial C}{\partial w^l_{jk}} = \frac{\partial C}{\partial z^l_j}*\frac{\partial z^l_j}{\partial w^l_{jk}} = \delta^l_j*a^{l-1}_k$$
+
+Vectorized:
+
+$$\frac{\partial C}{\partial b^l} = \delta^l$$
+
+$$\frac{\partial C}{\partial w^l} = \delta^l*(a^{l-1})^T$$
+
+## BP Slow Learning Issues - Saturated Neuron
+
+Suppose using sigmoid function as activation function, its shape look like below:
+
+<center><img src = 'ww1.sinaimg.cn/large/83d6b255ly1fy70ehhy3oj20bn07l747.jpg'></center>
+
+As you can see, as input approching infinite or infinitesimal, its derivative approching 0.
+
+$$\delta^L_j = \frac{\partial C}{\partial a^L_j}*\sigma'(z^L_j)$$
+
+$$\delta^l_k = \sum_j\delta^{l+1}_j*w^{l+1}_{jk} * \sigma'(z^l_k)$$
+
+In above two key equations, they both have $\sigma'$. So when the input for $\sigma'$ is a large positive or negative value, it will return a nearly 0 value. Then $\delta$ becomes very small, as a result, the partial derivatives are small (Neuron learns slowly).
+
+To address this issue, the cross-entropy was introduced which will be discussed in next article.
 
 
 
