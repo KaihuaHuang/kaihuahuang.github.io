@@ -118,7 +118,7 @@ $$\frac{\partial C}{\partial w^l} = \delta^l*(a^{l-1})^T$$
 
 Suppose using sigmoid function as activation function, its shape look like below:
 
-<center><img src = 'ww1.sinaimg.cn/large/83d6b255ly1fy70ehhy3oj20bn07l747.jpg'></center>
+<center><img src = 'http://ww1.sinaimg.cn/large/83d6b255ly1fy70ehhy3oj20bn07l747.jpg'></center>
 
 As you can see, as input approching infinite or infinitesimal, its derivative approching 0.
 
