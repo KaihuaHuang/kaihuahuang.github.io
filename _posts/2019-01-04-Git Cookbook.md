@@ -70,6 +70,8 @@ git rm [filename]
 ```
 git mv [original filename] [new filename]
 ```
+
+
 # Version Control
 ![](http://ww1.sinaimg.cn/large/83d6b255gy1fyullxubj1j206j04iq2t.jpg)
 
@@ -84,11 +86,34 @@ git log
 git reset --hard [commit id]
 ```
 
+# Branch Operation
+* Lists all local branches in the current repository
+```
+git branch
+```
 
+* Create new branch
+```
+git branch [branch name]
+```
 
+* Branch Switch
+```
+git checkout [branch name]
+```
+
+* Merge Another Banch to Current Branch
+```
+git merge [branch name]
+```
+
+* Delete Branch
+```
+git branch -d [branch name]
+```
 
 # Working with Remote Repository
-![](http://ww1.sinaimg.cn/large/83d6b255gy1fyulpo8qf0j20wk09gdg2.jpg)
+![](http://ww1.sinaimg.cn/large/83d6b255gy1fyulxdbewvj20vt0crtah.jpg)
 * Link Local Repository with Remote Repository
 ```
 git remote add origin [url]
