@@ -22,5 +22,5 @@ tags:
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-![](img/git1.jpg)
+![](../img/git1.jpg)
 
