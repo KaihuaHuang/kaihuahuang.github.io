@@ -52,7 +52,7 @@ $$
 
 The properties of $\epsilon$ comes from the derivative of OLS.
 
-As shown above, the higher SSE the bettwe the regression. So we define $R^2$ to measure the fitness.
+As shown above, the higher SSE the better the regression. So we define $R^2$ to measure the fitness.
 
 $$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$  
 

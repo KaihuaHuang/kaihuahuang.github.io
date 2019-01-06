@@ -111,7 +111,7 @@ $$\epsilon_i = y_i - \hat{y}_i\\ \epsilon \sim N(0,\sigma^2)$$
 Which means:
 $$y_i \sim N(x_iw,\sigma^2)$$
 
-So the probability for y_i$ is:
+So the probability for $y_i$ is:
 
 $$p(y_i) = \frac{1}{\sqrt{2\pi}\sigma}*exp[-\frac{(y_i - x_iw)^2}{2\sigma^2}]$$
 
