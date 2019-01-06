@@ -165,6 +165,11 @@ $$BIC = kLn(n) - 2Ln(L)$$
 
 The less AIC/BIC the better the model. 
 
+## Codes
+
+Codes and PDF version of this article can be found from my github repo: [BlogPDF](https://github.com/KaihuaHuang/BlogPDF)
+
+
 ## References
 [A Complete Tutorial on Time Series Modeling in R](https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-modeling/)
 
