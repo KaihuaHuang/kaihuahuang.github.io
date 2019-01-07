@@ -41,7 +41,7 @@ $$h_\theta(x) = g(\theta^Tx) = \frac{1}{1+exp(-\theta^Tx)}$$
 
 What's more, we will take the output as a probability $p(y=1&#124;x,\theta)$. 
 
-**Why sigmoid function has such property? And will don't we choose other function that can map output to range 0 to 1?**
+**Why sigmoid function has such property? And why don't we choose other function that can map output to range 0 to 1?**
 
 That's because binary classfication is Bernolli Distribution which is in [exponential family](http://www.debugrun.com/a/sMS657x.html)! Suppose $p$ is the parameter for Binomial Distribution.
 
@@ -59,7 +59,7 @@ a(\eta) = In(1-p)\\
 b(y) = 1
 $$
 
-$\eta$ is nature parameter, when $a$,$b$ and $T$ is fixed, changing $eta$ can get a new distribution.
+$\eta$ is nature parameter, when $a$,$b$ and $T$ is fixed, changing $\eta$ can get a new distribution.
 
 $$p = \frac{1}{1+e^{-\eta}}$$
 
