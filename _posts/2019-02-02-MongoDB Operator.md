@@ -26,14 +26,14 @@ tags:
 # Comparison Operator
 | Operator   |  Meaning  |
 | :-----:  | :----:  |
-|   \$eq   |   Matches values that are equal to a specified value.   |
-|    \$gt    |  Matches values that are greater than a specified value.  |
-|\$gte|Matches values that are greater than or equal to a specified value.|
-|\$lt|Matches values that are less than a specified value.|
-|\$lte|Matches values that are less than or equal to a specified value.|
-|\$ne|Matches all values that are not equal to a specified value.|
-|\$in|Matches any of the values specified in an array.|
-|\$nin|Matches none of the values specified in an array.|
+|   eq   |   Matches values that are equal to a specified value.   |
+|    gt    |  Matches values that are greater than a specified value.  |
+|gte|Matches values that are greater than or equal to a specified value.|
+|lt|Matches values that are less than a specified value.|
+|lte|Matches values that are less than or equal to a specified value.|
+|ne|Matches all values that are not equal to a specified value.|
+|in|Matches any of the values specified in an array.|
+|nin|Matches none of the values specified in an array.|
 
 ```js
 db.movieDetails.find({runtime: {$gt:90, $lt:120}})
@@ -52,8 +52,8 @@ db.movieDetails.find({runtime: {$gt:90, $lt:120}},{_id:0, title:1, runtime:1})
 # Element Operator
 | Operator   |  Meaning  |
 | :-----:  | :----:  |
-|   \$exists   |   Matches documents that have the specified field.   |
-|    \$type    |  Selects documents if a field is of the specified type.  |
+|   exists   |   Matches documents that have the specified field.   |
+|    type    |  Selects documents if a field is of the specified type.  |
 
 ```js
 // Return documents with mpaaRating field
@@ -66,10 +66,10 @@ db.movies.find({viewerRating:{$type: "int"}})
 #Logical Operator
 | Operator   |  Meaning  |
 | :-----:  | :----:  |
-|   \$and   | Joins query clauses with a logical AND returns all documents that match the conditions of both clauses.  |
-|    \$or   |  Joins query clauses with a logical OR returns all documents that match the conditions of either clause.  |
-|\$not|Inverts the effect of a query expression and returns documents that do not match the query expression.|
-|\$nor|Joins query clauses with a logical NOR returns all documents that fail to match both clauses.|
+|   and   | Joins query clauses with a logical AND returns all documents that match the conditions of both clauses.  |
+|    or   |  Joins query clauses with a logical OR returns all documents that match the conditions of either clause.  |
+|not|Inverts the effect of a query expression and returns documents that do not match the query expression.|
+|nor|Joins query clauses with a logical NOR returns all documents that fail to match both clauses.|
 
 ```js
 db.movieDetails.find({$or: 
@@ -80,9 +80,9 @@ db.movieDetails.find({$or:
 # Array Operator
 | Operator   |  Meaning  |
 | :-----:  | :----:  |
-|   \$all   |   Matches arrays that contain all elements specified in the query.   |
-|    \$elemMatch    |  Selects documents if element in the array field matches all the specified $elemMatch conditions.  |
-|\$size|Selects documents if the array field is a specified size.|
+|   all   |   Matches arrays that contain all elements specified in the query.   |
+|    elemMatch    |  Selects documents if element in the array field matches all the specified $elemMatch conditions.  |
+|size|Selects documents if the array field is a specified size.|
 
 ```js
 // The genres doesn't need to be exactly ["Comedy","Crime","Drama"]
