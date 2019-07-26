@@ -34,9 +34,10 @@ tags:
 > $$W_{t_m} - W_{t_n} \sim N(0,t_m-t_n)$$
 
 ## 2. Properties
-1. Brownian motion is martingale. $E(W_t|F_s) = W_s $
-2. $E(W_t^2-t|F_s) = W_s^2-s$
-3. $E[exp(\lambda W_t - \frac{1}{2}\lambda^2t)|F_s] = exp(\lambda W_s-\frac{1}{2}\lambda^2s)$
+
+1. Brownian motion is martingale. $E(W_t\vert F_s) = W_s $
+2. $E(W_t^2-t\vert F_s) = W_s^2-s$
+3. $E[exp(\lambda W_t - \frac{1}{2}\lambda^2t)\vert F_s] = exp(\lambda W_s-\frac{1}{2}\lambda^2s)$
 4. $cov(W_t,W_s) = s$
 
 > **Note:** 
