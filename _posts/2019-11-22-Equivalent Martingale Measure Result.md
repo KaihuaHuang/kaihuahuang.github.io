@@ -61,13 +61,20 @@ $$\theta = \frac{f}{g}$$
 
 By define the Market Price of Risk $\lambda$ as the volatility $\sigma_g$ of security g. $\theta$ can be proved as Martingale. Below is the prove
 > $$df = (r+\sigma_g \sigma_f)fdt + \sigma_f f dw$$
+
 > $$dg = (r+\sigma_g^2)gdt + \sigma_g g dw$$
+
 > Then
 > $$\ln f = (r + \sigma_g \sigma_f -\sigma_f^2/2)dt + \sigma_f dw$$
+
 > $$\ln g = (r + \sigma_g^2/2)dt + \sigma_g dw$$
+
 > Subtract $\ln g$ from $\ln f$
+
 > $$d(\ln f - \ln g) = d\ln\frac{f}{g} = -\frac{(\sigma_f - \sigma_g)^2}{2}dt + (\sigma_f -  \sigma_g)dw$$
+
 > Assume $X = \frac{f}{g}$  and use Ito's lemma
+
 > $$d(\frac{f}{g}) = (\sigma_f - \sigma_g)\frac{f}{g}dz$$
 
 By proving that $\theta$ is martingle. This could be used to calculate the price of security $f$.
