@@ -4,7 +4,7 @@ title:      Local Volatility - 1
 subtitle:   Fokker Planck Equation
 date:       2019-12-3
 author:     William
-header-img: img/post-bg-regression.jpg
+header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
     - Volatility
