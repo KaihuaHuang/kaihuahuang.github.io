@@ -81,9 +81,13 @@ $$\int_{-\infty}^{+\infty} f'(s)\mu(s,t) p(s,t)ds = f(s)\mu(s,t) p(s,t)|^{\infty
 = - \int_{-\infty}^{+\infty} f(s)\frac{\partial [\mu(s,t) p(s,t)]}{\partial s}ds$$
 
 > The intergration by part is used here, where
+
 > $$u = f(x), v = \mu(s,t) p(s,t)$$
+
 > And, the probability of asset price goes into infinity is 0 almost surely 
+
 > $$\lim_{s \to \infty} p(s,t) = 0$$
+
 > so $uv$ term disappear in the last euqation
 
 Then the second intergral is calculated below:
@@ -95,11 +99,17 @@ $$\frac{1}{2}*\int_{-\infty}^{+\infty}f''(s)\sigma^2(s,t)p(s,t)ds \\
 = \frac{1}{2}*\int_{-\infty}^{+\infty} f(s)\frac{\partial^2 [\sigma^2(s,t) p(s,t)]}{\partial s^2}ds$$
 
 > The intergration by part is used twice here, the first time
+
 > $$u = f'(x), v = \sigma^2(s,t) p(s,t)$$
+
 > the second time
+
 > $$u = f(x), v = \frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}$$
+
 > And, the probability of asset price goes into infinity is 0 almost surely 
+
 > $$\lim_{s \to \infty} p(s,t) = 0$$
+
 > so $uv$ term disappear
 
 Don't get lost here! Just substitude the two intergral results back to original formula:
