@@ -61,6 +61,8 @@ Note that, $r(u)$ is deterministic here.
 To obtain final result, we need to calculate 3 derivative: $\frac{\partial C}{\partial K}$, $\frac{\partial^2 C}{\partial K^2}$ and $\frac{\partial C}{\partial t}$:
 
 - $\frac{\partial C}{\partial K}$
+
+
 $$\frac{\partial C}{\partial K} = P(0,t)\frac{\partial (\int_K^{+\infty}(s-K)p(s,t)ds)}{\partial K}\\
 =P(0,t) [-(K-K)f(K,t)*1 +  \int_K^{+\infty}-p(s,t)ds]\\
 =-P(0,t)\int_K^{+\infty}p(s,t)ds$$
