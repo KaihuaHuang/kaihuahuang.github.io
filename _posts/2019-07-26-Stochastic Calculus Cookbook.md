@@ -177,7 +177,45 @@ To make things clear:
 
 >$$S_T = (S_t + h\int_0^{T-t} exp[\frac{1}{2}\sigma^2z-\sigma W_{z}]dz)*exp[\sigma W_{T-t}-\frac{1}{2}\sigma^2(T-t)]$$
 
+> **Example - Hard**
+>Solve the following equation:
+$$dS_t = (h+\mu S_t)dt + (k + \sigma S_t)dw$$
 
+> Create two auxiliary process
+
+> $$dX = \mu Xdt + \sigma Xdw$$
+
+> $$dY = \alpha(t)dt + \beta(t)dw$$
+
+> We wish that $S_t$ can be expressed as $S_t = X_tY_t$
+
+> Then $X_0 = 1$ and $Y_0 = S_0$
+
+> Since we already know the analystical for $X_t$
+
+> $$X_t = X_0exp[(\mu-\frac{1}{2}\sigma^2)T + \sigma W_t] \\
+= exp[(\mu-\frac{1}{2}\sigma^2)T + \sigma W_t]$$
+
+> Apply Ito's Lemma to $X_tY_t$
+
+> $$d(X_tY_t) = X_tdY_t +Y_tdX_t + dX_tdY_t \\
+ = \alpha(t)X_tdt + \beta(t)X_tdw + \mu X_tY_tdt + \sigma X_tY_tdw + \sigma X_t\beta(t)dt \\
+ = (\alpha(t)X_t + \mu X_tY_t + \sigma X_t\beta(t))dt  + (\beta(t)X_t + \sigma X_tY_t)dw \\
+ = (\alpha(t)X_t + \mu S_t + \sigma X_t\beta(t))dt  + (\beta(t)X_t + \sigma S_t)dw$$
+ 
+ > This term should equal to $dS_t$, to match drift term and diffusion term
+ 
+ > $$\alpha(t)X_t + \mu S_t + \sigma X_t\beta(t) = h + \mu S_t$$
+ 
+ > $$\beta(t)X_t + \sigma S_t = k + \sigma S_t$$
+ 
+ > Wo we can backout $\beta(t)$ and $\alpha(t)$
+ 
+ > $$\beta(t) = k * X_t^{-1}$$
+ 
+ > $$\alpha(t) = h * X_t^{-1} - \sigma \beta(t)$$
+ 
+ > Once $\beta(t)$ and $\alpha(t)$ are known, $Y_t$ can be calculated. Then simply calculate $S_t = X_t*Y_t$
 
 # References
 
