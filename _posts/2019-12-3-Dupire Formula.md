@@ -99,8 +99,8 @@ Applying intergral by part, which
 $$u = s - K, v = \frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}$$
 
 So the intergral would be:
-$$I_1 = (s-K)\frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}|^{+\infty}_{s=K} - \int_K^{+\infty}\frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}df \\
-= 0 - 0 - \int_K^{+\infty}\frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}df$$
+$$I_1 = (s-K)\frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}|^{+\infty}_{s=K} - \int_K^{+\infty}\frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}ds \\
+= 0 - 0 - \int_K^{+\infty}\frac{\partial [\sigma^2(s,t) p(s,t)]}{\partial s}ds$$
 
 > Where 
 
