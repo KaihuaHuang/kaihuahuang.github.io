@@ -1,7 +1,7 @@
 ﻿---
 layout:     post
 title:      Local Volatility - 3
-subtitle:   Dupire Formula as an Expe
+subtitle:   Dupire Formula as an Expectation
 date:       2020-2-7
 author:     William
 header-img: img/post-bg-2015.jpg
@@ -47,14 +47,19 @@ Apply Ito's Lemma to function $f$:
 $$df = [\frac{\partial f}{\partial T} + \mu_T S_T\frac{\partial f}{\partial S_T} + \frac{1}{2}\sigma_T^2S_T^2\frac{\partial^2 f}{\partial S_T^2}]dT + [\sigma_TS_T\frac{\partial f}{\partial S_T}]dw$$
 
 > $$\frac{\partial f}{\partial T} = -r_TP(0,T)(S_T-K)^+$$
+
 > $$\frac{\partial f}{\partial S_T} = P(0,T)1_{(S_T>K)}$$
+
 > $$\frac{\partial^2 f}{\partial S_T^2} = P(0,T)\delta_{(S_T-K)}$$
+
+Note that the $\delta$ is [Dirac Delta Function](https://www.cnblogs.com/dengdan890730/p/6206079.html).
 
 Plug in the above items
 
 $$df = P(0,T) * [-r_T(S_T-K)^+ + \mu_T S_T1_{(S_T>K)} + \frac{1}{2}\sigma_T^2S_T^2\delta_{(S_T-K)}]dT + P(0,T)*[\sigma_TS_T\delta_{(S_T-K)}]dw$$
 
 > $$(S_T-K)^+ = (S_T-K)1_{(S_T>K)}$$
+
 > $$\mu = r_T - q_T$$
 
 Take expectation on $df$, and $E[dw] = 0$. The second term can be ignored. The expected value of $f$ can be viewed as $dC$ (Because $f$ is discounted payoff).
@@ -67,14 +72,32 @@ Rearrange
 $$\frac{dC}{dT} = P(0,T) * E[r_T K1_{(S_T>K)} - q_TS_T1_{(S_T>K)} + \frac{1}{2}\sigma_T^2S_T^2\delta_{(S_T-K)}]$$
 
 > Recall the results from [last article](https://kaihuahuang.github.io/2019/12/03/Dupire-Formula/)
+
 > $$C = P(0,T)E[(S_T-K)^+] = P(0,T)E[S_T1_{(S_T>K)}] - P(0,T)KE[1_{(S_T>K)}]$$
+
 > $$\frac{dC}{dK} = -P(0,T)E[1_{(S_T>K)}]$$
 
 $$\frac{dC}{dT} = -K(r_T-q_T)\frac{dC}{dK}-q_TC + \frac{1}{2}P(0,T)E[\sigma_T^2S_T^2\delta_{(S_T-K)}]$$
 
 > Since $\delta_{(S_T-K)}$ is the derivative of $1_{(S_T>K)}$, it only has value at the point $S_T = K$, 0 otherwise . 
+
+> $$E[\delta_{(S_T-K)}] = p(K,T)$$
+
 > $$E[\sigma_T^2S_T^2\delta_{(S_T-K)}] = E[\sigma_T^2S_T^2|S_T = K]E[\delta_{(S_T-K)}] \\
  = K^2E[\sigma_T|S_T = K]E[\delta_{(S_T-K)}]$$
+ 
+ Replace $P(0,T)E[\delta_{(S_T-K)}]$ with $\frac{\partial ^2 C}{\partial K^2}$
+ 
+ $$\frac{\partial C}{\partial T} = -K(r_T-q_T)\frac{\partial C}{\partial K}-q_TC +  \frac{1}{2}K^2E[\sigma_T^2|S_T = K]\frac{\partial ^2 C}{\partial K^2}$$
+ 
+ Rearrange, we will get to the final result:
+ 
+ $$E[\sigma_T^2|S_T = K] = \frac{\frac{\partial C}{\partial T} + K(r_T-q_T)\frac{\partial C}{\partial K} + q_TC}{\frac{1}{2}K^2\frac{\partial ^2 C}{\partial K^2}}$$
+ 
+ Comparing with the results in last article, the right hand site is exactly the same. So we conclude that **local variance is the risk-neutral expectation of the instantaneous variance conditional on the final stock price $S_T$ being equal to the strike price K.**
+ 
+ 
+
 # References
 [Fokker Planck Equation Derivation: Local Volatility, Ornstein Uhlenbeck, and Geometric Brownian](https://www.youtube.com/watch?v=MmcgT6-lBoY)  
 [The Dupire Formula](http://wwwf.imperial.ac.uk/~mdavis/FDM11/DUPIRE_FORMULA.PDF)  
