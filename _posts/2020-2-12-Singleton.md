@@ -128,6 +128,11 @@ class UKExchangeCalendar{
             static UKExchangeCalendar instance;
             return instance;
         }
+        // Delete copy constructor
+        UKExchangeCalendar(const UKExchangeCalendar&) = delete;
+        
+        // Delete assign operator
+        UKExchangeCalendar& operator = (const UKExchangeCalendar&) = delete;
         
         // related public API
         // In this implementation, they are not static memeber function
@@ -137,18 +142,15 @@ class UKExchangeCalendar{
         
     private:
         // To gurantee that there is only one instance, we need to
-        // 1. Make consturctor private so that we cannot instantiate object outside class
+        // Make consturctor private so that we cannot instantiate object outside class
+        // Delete copy constructor and assign operator
         UKExchangeCalendar(){
             // Define class member
             Date NewYear = Date(2020,1,1);
             ...
         }
         
-        // 2. Delete copy constructor
-        UKExchangeCalendar(const UKExchangeCalendar&) = delete;
         
-        // 3. Delete assign operator
-        UKExchangeCalendar& operator = (const UKExchangeCalendar&) = delete;
     
         //date memebers are not static anymore
         Date NewYear;
@@ -331,6 +333,7 @@ In this file, meyer's singleton pattern is used. The instance of implementation 
 
 # References
 [Hands-On Design Patterns with C - Fedor G. Pikus](https://www.amazon.com/Hands-Design-Patterns-reusable-maintainable/dp/1788832566)
+
 [QuantLib](https://www.quantlib.org/)
 
 
