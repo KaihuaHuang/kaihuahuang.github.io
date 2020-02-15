@@ -28,6 +28,10 @@ The singleton is a pattern that's used to restrict the number of class instantia
 
 For example, in derivative pricing, there should be only one UK::Exchange calendar. In this case, we can make the UK::Exchange calendar as a Singleton.
 
+In practice, singleton is preferred to apply on data-heavy class instead of method-heavy class. And the key concern of the singleton is that there should be only one object is needed. Everytime when you use singleton, you shold ask yourself that what if there are 2 object? Is it OK? For example, the external data server should maintain only one object. If there are 2 objects refer to the same phsical sever, it will cause problems.
+
+What's more, singleton is just a concept in the current session. For example, the singleton in dll is just under the scope of dll. If there are multiple process load the dll, each process will have its own singleton. But this problem can be solved by putting the singleton in [shared memeory](http://www.it1352.com/494554.html).
+
 ## Quick Example
 Below is the simplest singleton implementation just for illustration. In this case, the program doesn't even instantiate a object of UKExchangeCalendar. It uses static member to gurantee that only one copy of data members is allocated. 
 ``` cpp
@@ -146,7 +150,7 @@ class UKExchangeCalendar{
         // Delete copy constructor and assign operator
         UKExchangeCalendar(){
             // Define class member
-            Date NewYear = Date(2020,1,1);
+            NewYear = Date(2020,1,1);
             ...
         }
         
@@ -164,6 +168,27 @@ UKExchangeCalendar::instance().isBusinessDay(Date(2019,05,07));
 ```
 
 The key of this implementation is instance( ) static memeber function. In this function, the instance is declared to be static. So it will be instantiated once. What's more, it's a kind of lazy initialization - the initialization is deferred until it's needed (the first time invoke instance( ) function). And this also solve the drawback of static singleton. Because, when static data B need A (by invoking A::instance( ) ), A will be instantiated.
+
+Also, after C++ 11, local static variable is thread-safe in initialization. As stated in the section 6.7 of [standard](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3337.pdf) : *If control enters the declaration concurrently while the variable is being initialized, the concurrent execution shall wait for completion of the initialization.* 
+
+However, access the static variable is not thread-safe. When multiple threads are accessing one common variable, the lock should be used to gurantee that at any time there is only one thread using the variable. Below is the most basic codes for lock:
+```cpp
+#include<mutex>
+
+std::mutex mt;
+void func(std::mutex* pmt){
+    //The first thread will lock before use it
+    //Other threads will be blocked
+    (*pmt).lock();
+    
+    //Some operations on shared variable
+    
+    // After the operations are done, unlock
+    // the blocked threads will be activated
+    (*pmt).unlock();
+}
+
+```
 
 However, this implementation will slow down the program. Because every call to UKExchangeCalendar::instance( ) must check whether the object is already initialized. By keeping a reference as the codes below can mitigate this problem.
 
@@ -222,7 +247,7 @@ interface and the implementation.
 
 ``` cpp
 //calendar.cpp
-inline bool Calendar::isBusinessDay(const Date& d) const {
+inline bool Calendar::isBusinessDay(const Date& _d) const {
     // Some validation checks here
     return impl_->isBusinessDay(_d);
 }
@@ -297,7 +322,7 @@ class UnitedKingdom : public Calendar {
     };
 ```
 
-In this header file of UK calendar, it declare three implementations of Calendar::WesternImpl. Since the definition of these implementations is under private access-specifier of class UnitedKingdom. So they can only be used inside the class UnitedKingdom. In another word, program cannot instantiate them outside class which can gurantee the uniqueness of 
+In this header file of UK calendar, it declare three implementations of Calendar::WesternImpl. Since the definition of these implementations is under private access-specifier of class UnitedKingdom. So they can only be used inside the class UnitedKingdom. In another word, program cannot instantiate them outside class which can gurantee the uniqueness of object.
 
 ``` cpp
 UnitedKingdom::UnitedKingdom(UnitedKingdom::Market market) {
@@ -336,4 +361,6 @@ In this file, meyer's singleton pattern is used. The instance of implementation 
 
 [QuantLib](https://www.quantlib.org/)
 
+[C++11中静态局部变量初始化的线程安全性](https://blog.csdn.net/imred/article/details/89069750)
 
+[C++:mutex库](https://blog.csdn.net/aixintianshideshouhu/article/details/94599830)
